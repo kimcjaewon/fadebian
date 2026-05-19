@@ -2,7 +2,7 @@ import { Suspense } from "react";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import CalEmbed from "@/components/CalEmbed";
-import { getServiceById, services } from "@/lib/config";
+import { services } from "@/lib/config";
 
 export const metadata = { title: "Book — Fadebian" };
 
@@ -24,7 +24,7 @@ export default function BookPage({
         <div className="max-w-4xl mx-auto px-6">
           <div className="mb-8">
             <span className="gold-rule" />
-            <h1 className="font-display font-black text-4xl md:text-5xl">
+            <h1 className="font-display font-black text-4xl md:text-5xl text-ink-100">
               {service ? `Book ${service.name}` : "Book your cut"}
             </h1>
             {service && (
@@ -34,14 +34,14 @@ export default function BookPage({
             )}
           </div>
 
-          <div className="bg-ink-900 border border-ink-800 rounded-2xl overflow-hidden">
+          <div className="bg-ink-900 border border-ink-700 rounded-2xl overflow-hidden shadow-sm">
             <Suspense fallback={<div className="p-8 text-ink-500">Loading…</div>}>
               <CalEmbed eventSlug={service?.calSlug} />
             </Suspense>
           </div>
 
           <p className="mt-6 text-xs text-ink-500 text-center">
-            Bookings are powered by Cal.com. Payment is collected in person at the shop.
+            Payment is collected in person at the shop.
           </p>
         </div>
       </main>

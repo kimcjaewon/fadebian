@@ -20,10 +20,10 @@ export default function CalEmbed({ eventSlug }: Props) {
     (async () => {
       const cal = await getCalApi({ namespace });
       cal("ui", {
-        // Match the dark, gold-accent vibe of the rest of the site
-        theme: "dark",
+        // Light theme with crimson accent to match the site
+        theme: "light",
         styles: {
-          branding: { brandColor: "#d4af37" }
+          branding: { brandColor: "#C8102E" }
         },
         hideEventTypeDetails: false,
         layout: "month_view"
@@ -36,7 +36,7 @@ export default function CalEmbed({ eventSlug }: Props) {
       namespace={namespace}
       calLink={calLink}
       style={{ width: "100%", height: "100%", minHeight: 680, overflow: "scroll" }}
-      config={{ layout: "month_view", theme: "dark" }}
+      config={{ layout: "month_view", theme: "light" }}
     />
   );
 }

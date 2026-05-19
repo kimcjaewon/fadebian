@@ -4,17 +4,30 @@ const config: Config = {
   content: ["./app/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}"],
   theme: {
     extend: {
+      // Light-mode palette. We keep the same class names from the dark version
+      // (ink-950, ink-100, etc.) but invert the values, so existing component
+      // markup auto-flips to a bright theme.
+      // 950 = body background (warm cream)
+      // 900 = card background (pure white)
+      // 800 = hover bg + soft borders (slightly warmer cream)
+      // 700 = stronger borders (warm beige)
+      // 500 = muted text
+      // 300 = body text
+      // 100 = headings (near-black)
       colors: {
         ink: {
-          950: "#0a0a0a",
-          900: "#111111",
-          800: "#1a1a1a",
-          700: "#262626",
-          500: "#737373",
-          300: "#d4d4d4",
-          100: "#f5f5f5"
+          950: "#FAFAF7", // cream — body bg
+          900: "#FFFFFF", // pure white — cards
+          800: "#F4F1EB", // soft cream — hover bg
+          700: "#E5E1D9", // warm beige — borders
+          500: "#8B8680", // muted gray — secondary text
+          300: "#3D3935", // dark warm gray — body text
+          100: "#1A1A1A"  // near-black — headings
         },
-        accent: { DEFAULT: "#d4af37", dark: "#b48f1d" }
+        accent: {
+          DEFAULT: "#C8102E", // classic barber-pole crimson
+          dark: "#A30D24"     // hover
+        }
       },
       fontFamily: {
         display: ["var(--font-display)", "ui-serif", "Georgia"],

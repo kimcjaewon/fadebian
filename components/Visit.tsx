@@ -11,11 +11,13 @@ function formatTime(hhmm: string): string {
 
 export default function Visit() {
   return (
-    <section id="visit" className="py-24 px-6 bg-ink-950">
+    <section id="visit" className="py-24 px-6 bg-ink-900 border-t border-ink-700">
       <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12">
         <div>
           <span className="gold-rule" />
-          <h2 className="font-display font-black text-4xl md:text-5xl">Visit the shop</h2>
+          <h2 className="font-display font-black text-4xl md:text-5xl text-ink-100">
+            Visit the shop
+          </h2>
           <p className="mt-4 text-ink-300 leading-relaxed">
             {shop.address.line1}<br />
             {shop.address.city}, {shop.address.state} {shop.address.zip}
@@ -25,13 +27,13 @@ export default function Visit() {
               href={shop.googleMapsUrl}
               target="_blank"
               rel="noreferrer"
-              className="bg-accent hover:bg-accent-dark text-ink-950 font-semibold px-5 py-3 rounded-full text-sm tracking-wide transition"
+              className="bg-accent hover:bg-accent-dark text-white font-semibold px-5 py-3 rounded-full text-sm tracking-wide transition shadow-sm shadow-accent/20"
             >
               Get directions
             </a>
             <a
               href={`tel:${shop.phone.replace(/[^\d+]/g, "")}`}
-              className="px-5 py-3 rounded-full border border-ink-700 hover:border-ink-500 text-sm tracking-wide transition"
+              className="px-5 py-3 rounded-full border border-ink-700 hover:border-ink-100 text-ink-300 hover:text-ink-100 text-sm tracking-wide transition"
             >
               {shop.phone}
             </a>
@@ -39,16 +41,16 @@ export default function Visit() {
               href={shop.instagramUrl}
               target="_blank"
               rel="noreferrer"
-              className="px-5 py-3 rounded-full border border-ink-700 hover:border-ink-500 text-sm tracking-wide transition"
+              className="px-5 py-3 rounded-full border border-ink-700 hover:border-ink-100 text-ink-300 hover:text-ink-100 text-sm tracking-wide transition"
             >
               {shop.instagram}
             </a>
           </div>
         </div>
 
-        <div className="bg-ink-900 border border-ink-800 rounded-2xl p-8">
-          <h3 className="font-display text-2xl font-bold mb-4">Hours</h3>
-          <dl className="divide-y divide-ink-800">
+        <div className="bg-ink-950 border border-ink-700 rounded-2xl p-8">
+          <h3 className="font-display text-2xl font-bold mb-4 text-ink-100">Hours</h3>
+          <dl className="divide-y divide-ink-700">
             {dayNames.map((name, i) => {
               const h = shop.hours[i as 0 | 1 | 2 | 3 | 4 | 5 | 6];
               return (
