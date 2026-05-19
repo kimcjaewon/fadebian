@@ -14,7 +14,7 @@ export const shop = {
     "Patient with the kids, dialed in with the fades.",
 
   // Contact
-  phone: "(714) 555-0123",
+  phone: "(714) 580-3797",
   email: "hello@fadebian.com",
   instagram: "@fadebian",
   instagramUrl: "https://www.instagram.com/fadebian/",
