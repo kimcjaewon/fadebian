@@ -20,15 +20,15 @@ export default function BookPage({
   return (
     <>
       <Nav />
-      <main className="pt-28 pb-12 min-h-screen bg-ink-950">
-        <div className="max-w-4xl mx-auto px-6">
-          <div className="mb-8">
+      <main className="pt-24 sm:pt-28 pb-12 min-h-screen bg-ink-950">
+        <div className="max-w-4xl mx-auto px-5 sm:px-6">
+          <div className="mb-6 sm:mb-8">
             <span className="gold-rule" />
-            <h1 className="font-display font-black text-4xl md:text-5xl text-ink-100">
+            <h1 className="font-display font-black text-3xl sm:text-4xl md:text-5xl text-ink-100">
               {service ? `Book ${service.name}` : "Book your cut"}
             </h1>
             {service && (
-              <p className="mt-2 text-ink-300">
+              <p className="mt-1.5 sm:mt-2 text-sm sm:text-base text-ink-300">
                 ${service.priceUsd} · {service.durationMin} min
               </p>
             )}
@@ -40,7 +40,7 @@ export default function BookPage({
             </Suspense>
           </div>
 
-          <p className="mt-6 text-xs text-ink-500 text-center">
+          <p className="mt-5 sm:mt-6 text-xs text-ink-500 text-center px-4">
             Payment is collected in person at the shop.
           </p>
         </div>

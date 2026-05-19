@@ -47,9 +47,11 @@ export const shop = {
   // Update this to whatever username he picks when he signs up.
   calUsername: "fadebian",
 
-  // Hero image
+  // Hero image — pick any Unsplash URL. Brighter daytime shots fit the light theme.
+  // Want to swap it? Browse https://unsplash.com/s/photos/barbershop and replace
+  // this URL with any image link from there.
   heroImage:
-    "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=1600&q=80"
+    "https://images.unsplash.com/photo-1593702275687-f8b402bf1fb5?w=1600&q=80"
 };
 
 // ═══════════════════════════════════════════════════════════════════════

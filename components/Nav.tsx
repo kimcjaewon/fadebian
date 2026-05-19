@@ -19,18 +19,23 @@ export default function Nav() {
         scrolled ? "bg-ink-950/95 backdrop-blur-md border-b border-ink-700" : "bg-transparent"
       }`}
     >
-      <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-        <Link href="/" className="font-display text-2xl font-black tracking-tight text-ink-100">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between gap-2">
+        <Link
+          href="/"
+          className={`font-display text-xl sm:text-2xl font-black tracking-tight transition-colors ${
+            scrolled ? "text-ink-100" : "text-white"
+          }`}
+        >
           {shop.name}<span className="text-accent">.</span>
         </Link>
-        <div className="hidden md:flex items-center gap-8 text-sm tracking-wide text-ink-300">
-          <a href="/#services" className="hover:text-ink-100 transition">Services</a>
-          <a href="/#reviews" className="hover:text-ink-100 transition">Reviews</a>
-          <a href="/#visit" className="hover:text-ink-100 transition">Visit</a>
+        <div className="hidden md:flex items-center gap-8 text-sm tracking-wide">
+          <a href="/#services" className={`transition ${scrolled ? "text-ink-300 hover:text-ink-100" : "text-white/85 hover:text-white"}`}>Services</a>
+          <a href="/#reviews"  className={`transition ${scrolled ? "text-ink-300 hover:text-ink-100" : "text-white/85 hover:text-white"}`}>Reviews</a>
+          <a href="/#visit"    className={`transition ${scrolled ? "text-ink-300 hover:text-ink-100" : "text-white/85 hover:text-white"}`}>Visit</a>
         </div>
         <Link
           href="/book"
-          className="bg-accent hover:bg-accent-dark text-white font-semibold px-5 py-2.5 rounded-full text-sm tracking-wide transition shadow-sm shadow-accent/20"
+          className="bg-accent hover:bg-accent-dark text-white font-semibold px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm tracking-wide transition shadow-sm shadow-accent/20"
         >
           Book now
         </Link>
