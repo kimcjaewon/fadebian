@@ -47,10 +47,10 @@ export const shop = {
   // Update this to whatever username he picks when he signs up.
   calUsername: "fadebian",
 
-  // Hero image — using his actual Booksy business photo. Can be swapped for
-  // any URL (Unsplash, Instagram, own upload). Just update this line.
+  // Hero image — warm-toned atmospheric barbershop shot from Unsplash.
+  // Once Fadebian sends a real photo of his shop, swap this URL for his own.
   heroImage:
-    "https://d2zdpiztbgorvt.cloudfront.net/region1/us/1356898/biz_photo/5e74787d82374223a3b5bef87c3e5c-fabian-torres-biz-photo-fd4cbd46120448f9a40c858d266ea5-booksy.jpeg",
+    "https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=1600&q=80",
 
   // Fallback link — if a customer prefers to book on Booksy instead of on-site
   booksyUrl:

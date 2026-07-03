@@ -1,16 +1,14 @@
 import { shop } from "@/lib/config";
 
-// Placeholder tiles that link to Fadebian's real Instagram. To show actual
-// live posts, sign up for SnapWidget or LightWidget (free tier) and replace
-// this section with an iframe embed. For now, this creates a clean CTA that
-// drives traffic to his real feed.
-const tileGradients = [
-  "from-ink-700 via-ink-800 to-ink-900",
-  "from-ink-800 via-ink-900 to-ink-800",
-  "from-ink-700 via-ink-800 to-ink-700",
-  "from-ink-800 via-ink-700 to-ink-800",
-  "from-ink-700 via-ink-800 to-ink-900",
-  "from-ink-800 via-ink-900 to-ink-700"
+// Placeholder tiles that link to Fadebian's Instagram. Real photo integration
+// via SnapWidget or LightWidget (both free tier) is a good v2 upgrade.
+const tileTones = [
+  "bg-ink-800",
+  "bg-ink-700",
+  "bg-ink-800",
+  "bg-ink-700",
+  "bg-ink-800",
+  "bg-ink-700"
 ];
 
 export default function InstagramGrid() {
@@ -28,16 +26,16 @@ export default function InstagramGrid() {
         </div>
 
         <div className="grid grid-cols-3 gap-2 sm:gap-3 mb-8">
-          {tileGradients.map((g, i) => (
+          {tileTones.map((tone, i) => (
             <a
               key={i}
               href={shop.instagramUrl}
               target="_blank"
               rel="noreferrer"
-              className={`aspect-square rounded-lg sm:rounded-xl bg-gradient-to-br ${g} border border-ink-700 hover:border-accent/60 transition group relative overflow-hidden`}
+              className={`aspect-square rounded-lg sm:rounded-xl ${tone} border border-ink-700 hover:border-accent transition group relative overflow-hidden`}
             >
-              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 bg-accent/10 backdrop-blur-sm transition">
-                <span className="text-white text-xs sm:text-sm font-semibold tracking-wide">
+              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+                <span className="text-ink-100 text-xs sm:text-sm font-medium tracking-wide">
                   View →
                 </span>
               </div>
@@ -50,7 +48,7 @@ export default function InstagramGrid() {
             href={shop.instagramUrl}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-2 bg-accent hover:bg-accent-dark text-white font-semibold px-6 sm:px-7 py-3 rounded-full text-sm sm:text-base tracking-wide transition shadow-sm shadow-accent/20"
+            className="inline-flex items-center gap-2 bg-accent hover:bg-accent-dark text-white font-semibold px-6 sm:px-7 py-3 rounded-full text-sm sm:text-base tracking-wide transition"
           >
             <span>Follow {shop.instagram} on Instagram</span>
             <span aria-hidden>→</span>

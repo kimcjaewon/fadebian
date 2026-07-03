@@ -8,29 +8,29 @@
 }
 
 html, body {
-  background: #FAFAF7;
-  color: #1A1A1A;
+  background: #F5F1EB;
+  color: #1C1A17;
   -webkit-font-smoothing: antialiased;
 }
 
-/* Subtle film grain for warmth */
+/* Subtle warm grain — the visual whisper that reads as "expensive paper" */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
   pointer-events: none;
   z-index: 100;
-  opacity: 0.025;
+  opacity: 0.02;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
-/* Crimson accent underline */
+/* Subtle mocha rule under section headings — quiet accent */
 .gold-rule {
   display: inline-block;
-  width: 60px;
-  height: 2px;
-  background: #C8102E;
-  margin: 0 0 1.5rem 0;
+  width: 40px;
+  height: 1px;
+  background: #7A6547;
+  margin: 0 0 1.75rem 0;
 }
 
 html { scroll-behavior: smooth; }

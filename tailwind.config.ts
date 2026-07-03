@@ -4,29 +4,29 @@ const config: Config = {
   content: ["./app/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}"],
   theme: {
     extend: {
-      // Light-mode palette. We keep the same class names from the dark version
-      // (ink-950, ink-100, etc.) but invert the values, so existing component
-      // markup auto-flips to a bright theme.
-      // 950 = body background (warm cream)
+      // Quiet luxury palette — warm neutrals, no pure black, no shouting.
+      // Reference: Aesop / The Row / Loro Piana restraint.
+      //
+      // 950 = body background (warm bone)
       // 900 = card background (pure white)
-      // 800 = hover bg + soft borders (slightly warmer cream)
-      // 700 = stronger borders (warm beige)
-      // 500 = muted text
-      // 300 = body text
-      // 100 = headings (near-black)
+      // 800 = hover / soft cream
+      // 700 = warm sand borders
+      // 500 = warm gray muted text
+      // 300 = warm slate body text
+      // 100 = warm charcoal headings (never pure black)
       colors: {
         ink: {
-          950: "#FAFAF7", // cream — body bg
+          950: "#F5F1EB", // bone — warm off-white body bg
           900: "#FFFFFF", // pure white — cards
-          800: "#F4F1EB", // soft cream — hover bg
-          700: "#E5E1D9", // warm beige — borders
-          500: "#8B8680", // muted gray — secondary text
-          300: "#3D3935", // dark warm gray — body text
-          100: "#1A1A1A"  // near-black — headings
+          800: "#EDE7DC", // warm cream — hover states
+          700: "#DDD1BF", // warm sand — borders
+          500: "#8B8073", // warm gray — muted text
+          300: "#4A423A", // warm slate — body text
+          100: "#1C1A17"  // warm charcoal — headings
         },
         accent: {
-          DEFAULT: "#C8102E", // classic barber-pole crimson
-          dark: "#A30D24"     // hover
+          DEFAULT: "#7A6547", // warm mocha — quiet accent
+          dark: "#5C4B32"     // deeper mocha for hover
         }
       },
       fontFamily: {
