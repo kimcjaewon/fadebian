@@ -47,11 +47,28 @@ export const shop = {
   // Update this to whatever username he picks when he signs up.
   calUsername: "fadebian",
 
-  // Hero image — pick any Unsplash URL. Brighter daytime shots fit the light theme.
-  // Want to swap it? Browse https://unsplash.com/s/photos/barbershop and replace
-  // this URL with any image link from there.
+  // Hero image — using his actual Booksy business photo. Can be swapped for
+  // any URL (Unsplash, Instagram, own upload). Just update this line.
   heroImage:
-    "https://images.unsplash.com/photo-1593702275687-f8b402bf1fb5?w=1600&q=80"
+    "https://d2zdpiztbgorvt.cloudfront.net/region1/us/1356898/biz_photo/5e74787d82374223a3b5bef87c3e5c-fabian-torres-biz-photo-fd4cbd46120448f9a40c858d266ea5-booksy.jpeg",
+
+  // Fallback link — if a customer prefers to book on Booksy instead of on-site
+  booksyUrl:
+    "https://booksy.com/en-us/1356898_fabian-torres_barber-shop_103764_garden-grove",
+
+  // Credentials for the stats strip
+  stats: {
+    sinceYear: 2022,
+    cutsCount: 1000,
+    rating: 5.0,
+    reviewCount: 20
+  },
+
+  // Referral program terms
+  referral: {
+    firstDeal: "50% off next cut for both of you",
+    subsequentDeal: "$5 off next cut for both of you"
+  }
 };
 
 // ═══════════════════════════════════════════════════════════════════════

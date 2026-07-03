@@ -2,7 +2,7 @@ import { Suspense } from "react";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import CalEmbed from "@/components/CalEmbed";
-import { services } from "@/lib/config";
+import { services, shop } from "@/lib/config";
 
 export const metadata = { title: "Book — Fadebian" };
 
@@ -11,7 +11,6 @@ export default function BookPage({
 }: {
   searchParams: { event?: string };
 }) {
-  // Look up the selected service by Cal slug (passed via ?event=...)
   const requested = searchParams.event;
   const service = requested
     ? services.find((s) => s.calSlug === requested)
@@ -43,6 +42,22 @@ export default function BookPage({
           <p className="mt-5 sm:mt-6 text-xs text-ink-500 text-center px-4">
             Payment is collected in person at the shop.
           </p>
+
+          {/* Booksy fallback for anyone who prefers the app they already use */}
+          <div className="mt-10 sm:mt-14 pt-8 border-t border-ink-700 text-center">
+            <p className="text-xs sm:text-sm text-ink-500 mb-3">
+              Prefer to book through Booksy?
+            </p>
+            <a
+              href={shop.booksyUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 text-sm text-ink-300 hover:text-accent transition font-medium"
+            >
+              <span>Book on Booksy instead</span>
+              <span aria-hidden>↗</span>
+            </a>
+          </div>
         </div>
       </main>
       <Footer />
