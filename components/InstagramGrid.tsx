@@ -9,10 +9,13 @@ import { shop } from "@/lib/config";
 // To swap in a new post: go to instagram.com/fadebian, open a post, copy its
 // URL, and paste it in this array. That's it — the embed refreshes on next
 // page load.
+// Note: URLs must NOT include the username segment (/fadebian/).
+// Correct format: https://www.instagram.com/p/{shortcode}/
+// Incorrect (won't embed): https://www.instagram.com/fadebian/p/{shortcode}/
 const posts = [
-  "https://www.instagram.com/fadebian/p/DDvnod9pfVd/",
-  "https://www.instagram.com/fadebian/p/C8r_Y4SPMRw/",
-  "https://www.instagram.com/fadebian/p/C5OyHzVScLF/"
+  "https://www.instagram.com/p/DDvnod9pfVd/",
+  "https://www.instagram.com/p/C8r_Y4SPMRw/",
+  "https://www.instagram.com/p/C5OyHzVScLF/"
 ];
 
 declare global {
