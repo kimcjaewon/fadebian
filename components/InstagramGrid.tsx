@@ -1,17 +1,45 @@
+"use client";
+
+import { useEffect } from "react";
 import { shop } from "@/lib/config";
 
-// Placeholder tiles that link to Fadebian's Instagram. Real photo integration
-// via SnapWidget or LightWidget (both free tier) is a good v2 upgrade.
-const tileTones = [
-  "bg-ink-800",
-  "bg-ink-700",
-  "bg-ink-800",
-  "bg-ink-700",
-  "bg-ink-800",
-  "bg-ink-700"
+// Real Instagram posts from @fadebian. Instagram's official embed loads the
+// actual photo, likes, caption, and a "View on Instagram" CTA for each.
+//
+// To swap in a new post: go to instagram.com/fadebian, open a post, copy its
+// URL, and paste it in this array. That's it — the embed refreshes on next
+// page load.
+const posts = [
+  "https://www.instagram.com/fadebian/p/DDvnod9pfVd/",
+  "https://www.instagram.com/fadebian/p/C8r_Y4SPMRw/",
+  "https://www.instagram.com/fadebian/p/C5OyHzVScLF/"
 ];
 
+declare global {
+  interface Window {
+    instgrm?: { Embeds: { process: () => void } };
+  }
+}
+
 export default function InstagramGrid() {
+  useEffect(() => {
+    // Load Instagram's embed script once, then reprocess on remount so the
+    // blockquotes turn into real embeds.
+    const scriptId = "instagram-embed-script";
+    const existing = document.getElementById(scriptId) as HTMLScriptElement | null;
+
+    if (!existing) {
+      const script = document.createElement("script");
+      script.id = scriptId;
+      script.async = true;
+      script.src = "https://www.instagram.com/embed.js";
+      script.onload = () => window.instgrm?.Embeds.process();
+      document.body.appendChild(script);
+    } else if (window.instgrm) {
+      window.instgrm.Embeds.process();
+    }
+  }, []);
+
   return (
     <section className="py-16 sm:py-24 px-5 sm:px-6 bg-ink-900 border-y border-ink-700">
       <div className="max-w-5xl mx-auto">
@@ -25,21 +53,21 @@ export default function InstagramGrid() {
           </p>
         </div>
 
-        <div className="grid grid-cols-3 gap-2 sm:gap-3 mb-8">
-          {tileTones.map((tone, i) => (
-            <a
-              key={i}
-              href={shop.instagramUrl}
-              target="_blank"
-              rel="noreferrer"
-              className={`aspect-square rounded-lg sm:rounded-xl ${tone} border border-ink-700 hover:border-accent transition group relative overflow-hidden`}
-            >
-              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
-                <span className="text-ink-100 text-xs sm:text-sm font-medium tracking-wide">
-                  View →
-                </span>
-              </div>
-            </a>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10 items-start">
+          {posts.map((permalink) => (
+            <blockquote
+              key={permalink}
+              className="instagram-media"
+              data-instgrm-permalink={permalink}
+              data-instgrm-version="14"
+              style={{
+                background: "#FFFFFF",
+                border: 0,
+                margin: 0,
+                minWidth: 0,
+                width: "100%"
+              }}
+            />
           ))}
         </div>
 
@@ -48,7 +76,7 @@ export default function InstagramGrid() {
             href={shop.instagramUrl}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-2 bg-accent hover:bg-accent-dark text-white font-semibold px-6 sm:px-7 py-3 rounded-full text-sm sm:text-base tracking-wide transition"
+            className="inline-flex items-center gap-2 bg-accent hover:bg-accent-dark text-white font-semibold px-6 sm:px-8 py-3 sm:py-3.5 rounded-full text-sm sm:text-base tracking-wide transition"
           >
             <span>Follow {shop.instagram} on Instagram</span>
             <span aria-hidden>→</span>
